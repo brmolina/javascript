@@ -1,0 +1,25 @@
+package com.algaworks.localidades;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.json.AbstractJsonParser;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.servlet.mvc.method.annotation.JsonViewResponseBodyAdvice;
+
+import com.fasterxml.jackson.annotation.JsonView;
+
+@SpringBootApplication
+public class LocalidadesApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(LocalidadesApplication.class, args);
+	}
+	
+	@ControllerAdvice
+    static class JsonpAdvice extends AbstractJsonParser {
+        public JsonpAdvice() {
+            super();
+        }
+    }
+
+}
